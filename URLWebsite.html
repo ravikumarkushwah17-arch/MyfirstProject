@@ -3,71 +3,340 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>URL Website</title>
+  <title>URL Website - 30 Buttons</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- Prevent back button access (no caching) -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="style.css">
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+     background-image: url('test123.jpg');
+    /*  background: linear-gradient(to right, royalblue, rebeccapurple); */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      flex-shrink: 0;
+    }
+
+    header {
+      font-size: 2.5rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      position: relative;
+    }
+
+    .buttons-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn {
+      flex: 0 1 200px; /* allows wrapping and equal sizing */
+      height: 50px;
+      font-size: 16px;
+      padding: 0 10px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      background-color: #444;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      white-space: normal;
+      line-height: 1.2;
+    }
+
+
+   /* .btn {
+      padding: 16px;
+      width: min(180px, 45%);
+      max-width: 180px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+      text-align: center;
+      white-space: nowrap;
+    } */
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+
+    /* Color classes */
+    .btn1 { background-color: crimson; }
+    .btn2 { background-color: black; }
+    .btn3 { background-color: forestgreen; }
+    .btn4 { background-color: orange; }
+    .btn5 { background-color: purple; }
+    .btn6 { background-color: teal; }
+    .btn7 { background-color: gold; }
+    .btn8 { background-color: darkred; }
+    .btn9 { background-color: dodgerblue; }
+    .btn10 { background-color: seagreen; }
+    .btn11 { background-color: slateblue; }
+    .btn12 { background-color: darkorange; }
+    .btn13 { background-color: darkcyan; }
+    .btn14 { background-color: firebrick; }
+    .btn15 { background-color: navy; }
+    .btn16 { background-color: darkmagenta; }
+    .btn17 { background-color: mediumvioletred; }
+    .btn18 { background-color: darkslategray; }
+    .btn19 { background-color: tomato; }
+    .btn20 { background-color: royalblue; }
+    .btn21 { background-color: mediumseagreen; }
+    .btn22 { background-color: peru; }
+    .btn23 { background-color: darkgoldenrod; }
+    .btn24 { background-color: steelblue; }
+    .btn25 { background-color: mediumorchid; }
+    .btn26 { background-color: coral; }
+    .btn27 { background-color: mediumturquoise; }
+    .btn28 { background-color: darkolivegreen; }
+    .btn29 { background-color: slategray; }
+    .btn30 { background-color: darkviolet; }
+
+    .info-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 90%;
+      max-width: 400px;
+      background: rgba(0, 0, 0, 0.9);
+      border-left: 4px solid yellow;
+      border-radius: 6px;
+      padding: 15px;
+      font-size: 0.95rem;
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+    }
+
+    .info-title {
+      color: gold;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .info-message {
+      text-align: center;
+      font-size: 1rem;
+      color: white;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .info-table th {
+      color: lightblue;
+      font-size: 1rem;
+      border-bottom: 1px solid gray;
+      padding-bottom: 6px;
+    }
+
+    .info-table td {
+      vertical-align: top;
+      padding: 8px;
+      border-left: 1px solid gray;
+    }
+
+    .info-table td:first-child {
+      border-left: none;
+    }
+
+    .info-table ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .info-table li {
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      text-align: center;
+      color: yellow;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      font-size: 2rem;
+      text-decoration: underline;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    @media ( max-width: 600px ) {
+      .btn {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    WELCOME TO URL WEBSITE
-    <div id="clock"></div>
-  </header>
+  <header>WELCOME TO URL WEBSITE</header>
 
   <main>
-    <h1>CLICK BUTTON TO OPEN WEBSITE</h1>
+    <h1>Click Button to Open Website</h1>
 
-    <div class="buttons-container">
+    <div class="buttons-section">
+      <!-- Buttons 1-8: unique tables -->
+      <button class="btn btn1" 
+        onmouseover="showInfo('Google', 'Search engine for the web', true, ['Find websites', 'Images & News', 'Translate', 'Maps', 'Tools'], ['Safe browsing', 'Voice search', 'Speedy results', 'Autocomplete', 'Mobile friendly'])" 
+        onmouseout="hideInfo()" 
+        onclick="openWebsite('https://www.google.com/')">GOOGLE</button>
 
-      <button class="btn btn11" onclick="openWebsite('https://copilot.microsoft.com/chats')">COPILOT</button>
-      <button class="btn btn18" onclick="openWebsite('https://chatgpt.com/')">CHATGPT</button>
-      <button class="btn btn3" onclick="openWebsite('https://grok.com/')">GROK AI</button>
-      <button class="btn btn12" onclick="openWebsite('https://www.perplexity.ai/')">PERPLEXITY AI</button>
-      <button class="btn btn1" onclick="openWebsite('https://gemini.google.com')">GEMINI AI</button>
-      <button class="btn btn10" onclick="openWebsite('https://chat.deepseek.com/')">DEEPSEEK</button>
-      <button class="btn btn1" onclick="openWebsite('https://www.google.com/')">GOOGLE</button>
-      <button class="btn" style="background-color: red;" onclick="openWebsite('https://youtube.com/')">YOUTUBE</button>
-      <button class="btn" style="background-color: black;" onclick="openWebsite('https://github.com/')">GITHUB</button>
-      <button class="btn" style="background-color: blue;" onclick="openWebsite('https://www.infinityfree.com/')">INFINITY FREE</button>
-      <button class="btn btn4" onclick="openWebsite('https://www.ignou.ac.in/pages/60')">IGNOU</button>
-      <button class="btn btn5" onclick="openWebsite('https://www.sarkariresult.com/')">SARKARI RESULT</button>
-      <button class="btn btn6" onclick="openWebsite('https://web.whatsapp.com/')">WHATSAPP</button>
-      <button class="btn btn16" onclick="openWebsite('https://mail.google.com/mail/u/0/#inbox')">GMAIL LOGIN</button>
-      <button class="btn btn13" onclick="openWebsite('https://sso.redhat.com/auth')">REDHAT LOGIN</button>
-      <button class="btn btn7" onclick="openWebsite('https://web.telegram.org/k/')">TELGRAM</button>
-      <button class="btn btn9" onclick="openWebsite('https://www.instagram.com/accounts/login/?hl=en')">INSTAGRAM</button>
-      <button class="btn btn11" onclick="openWebsite('https://groww.in/')">GROWW</button>
-      <button class="btn btn12" onclick="openWebsite('https://kite.zerodha.com/')">KITE</button>
-      <button class="btn btn13" onclick="openWebsite('https://wazirx.com/login')">WAZIRX</button>
-      <button class="btn btn14" onclick="openWebsite('https://accounts.binance.com/en/login')">BINANCE</button>
-      <button class="btn btn15" onclick="openWebsite('https://coinmarketcap.com/')">COINMARKETCAP</button>
-      <button class="btn btn16" onclick="openWebsite('https://www.coingecko.com/')">COINGEKO</button>
-     <button class="btn btn17" onclick="openWebsite('https://www.cricbuzz.com/')">CRICBUZZ</button>
-      <button class="btn btn18" onclick="openWebsite('files/Scripts')">CODING FILES</button>
-     <button class="btn btn19" onclick="openWebsite('files')">DOCUMENTS</button>
-      <button class="btn btn20" onclick="openWebsite('https://127.0.0.1:9090')">COCKPIT</button>
-      <button class="btn btn1" onclick="openWebsite('files/Webpages')">WEBPAGE FILES</button>
-      <button class="btn btn2" onclick="openWebsite('https://www.apnacollege.in/home-post-login')">Apna College</button>
-      <button class="btn btn3" onclick="openWebsite('https://cdnjs.com/libraries/font-awesome')">Libraries</button>
-      <button class="btn btn4" onclick="openWebsite('https://fontawesome.com/search?m=free&o=r')">Icon Downloads</button>
-      <button class="btn btn5" onclick="openWebsite('https://developer.mozilla.org/en-US/')">MDN Reference</button>
-      <button class="btn btn6" onclick="openWebsite('https://unsplash.com/s/photos/splash')">Splash Photos</button>
-      <button class="btn btn7" onclick="openWebsite('project')">My Projects</button>
-      <button class="btn btn7" style="background-color: red;" onclick="openWebsite('http://localhost:5000/')">SERVICES DASHBOARD</button>
-       <button class="btn btn9" onclick="logout()">LOGOUT</button>
-      
-    </div>
+      <button class="btn btn2" 
+        onmouseover="showInfo('ChatGPT', 'AI chat assistant by OpenAI', true, ['Conversational AI', 'Code help', 'Writing assistant', 'Learning support', 'Fun & games'], ['GPT-4 engine', 'Custom instructions', 'Secure access', 'Web mode', 'Memory features'])" 
+        onmouseout="hideInfo()" 
+        onclick="openWebsite('https://chatgpt.com/')">CHATGPT</button>
+
+      <button class="btn btn3" 
+        onmouseover="showInfo('Grok AI', 'AI by Elon Musk / xAI', true, ['Twitter X integration', 'Answers with wit', 'Coded in-house', 'Real-time responses', 'Experimental AI'], ['Backed by xAI', 'Integrated with X', 'Fast rollout', 'Vision driven', 'Cutting-edge'])" 
+        onmouseout="hideInfo()" 
+        onclick="openWebsite('https://grok.com/')">GROK AI</button>
+
+      <button class="btn btn4" 
+        onmouseover="showInfo('IGNOU', 'Official education portal', true, ['Online courses', 'Assignment upload', 'Result view', 'Course materials', 'Admission help'], ['UG/PG programs', 'Valid nationwide', 'Flexible learning', 'Study centers', 'Govt recognized'])" 
+        onmouseout="hideInfo()" 
+        onclick="openWebsite('https://www.ignou.ac.in/pages/60')">IGNOU</button>
+
+      <button class="btn btn5" 
+        onmouseover="showInfo('Sarkari Result', 'Govt job result site', true, ['Exam alerts', 'Application forms', 'Results', 'Admit cards', 'Latest jobs'], ['All India exams', 'Free access', 'Govt verified', 'Updated daily', 'Easy UI'])" 
+        onmouseout="hideInfo()" 
+        onclick="openWebsite('https://www.sarkariresult.com/')">SARKARI RESULT</button>
+
+      <button class="btn btn6" 
+        onmouseover="showInfo('WhatsApp Web', 'Use WhatsApp from browser', true, ['Send messages', 'File sharing', 'View status', 'Make calls', 'Search chat'], ['Syncs with phone', 'QR login', 'Fast and secure', 'Works on all browsers', 'Easy logout'])" 
+        onmouseout="hideInfo()" 
+        onclick="openWebsite('https://web.whatsapp.com/')">WHATSAPP</button>
+
+      <button class="btn btn7" 
+        onmouseover="showInfo('Gmail Login', 'Google email service', true, ['Send/Receive mails', 'Inbox filters', 'Themes', 'Contacts', 'Calendar'], ['Secure login', 'Spam protection', 'Two-factor auth', 'Mobile apps', 'Label system'])" 
+        onmouseout="hideInfo()" 
+        onclick="openWebsite('https://mail.google.com/mail/u/0/#inbox')">GMAIL LOGIN</button>
+
+      <button class="btn btn8" 
+        onmouseover="showInfo('RedHat Login', 'Red Hat authentication portal', true, ['Enterprise login', 'Developer access', 'Partner portal', 'Training resources', 'Subscription management'], ['Secure SSO', 'Cloud login', 'Product docs', 'Support access', 'User profile'])" 
+        onmouseout="hideInfo()" 
+        onclick="openWebsite('https://sso.redhat.com/auth')">REDHAT LOGIN</button>
+
+      <!-- Buttons 09-30: short info only -->
+      <button class="btn btn9" onmouseover="showInfo('Telegram', 'Instant messaging app', false)" onmouseout="hideInfo()" onclick="openWebsite('https://web.telegram.org/k/')">TELEGRAM</button>
+      <button class="btn btn10" onmouseover="showInfo('Facebook', 'Connect with friends', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.facebook.com/')">FACEBOOK</button>
+      <button class="btn btn11" onmouseover="showInfo('Instagram', 'Photo & video sharing', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.instagram.com/accounts/login/?hl=en')">INSTAGRAM</button>
+      <button class="btn btn12" onmouseover="showInfo('YouTube', 'Watch & upload videos', false)" onmouseout="hideInfo()" onclick="openWebsite('https://youtube.com/')">YOUTUBE</button>
+      <button class="btn btn13" onmouseover="showInfo('Groww', 'Investment platform', false)" onmouseout="hideInfo()" onclick="openWebsite('https://groww.in/')">GROWW</button>
+      <button class="btn btn14" onmouseover="showInfo('Kite Zerodha', 'Trading platform', false)" onmouseout="hideInfo()" onclick="openWebsite('https://kite.zerodha.com/')">KITE</button>
+      <button class="btn btn15" onmouseover="showInfo('WazirX', 'Cryptocurrency exchange', false)" onmouseout="hideInfo()" onclick="openWebsite('https://wazirx.com/login')">WAZIRX</button>
+      <button class="btn btn16" onmouseover="showInfo('CoinGecko', 'Crypto price tracking', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.coingecko.com/')">COINGECKO</button>
+      <button class="btn btn17" onmouseover="showInfo('Stack Overflow', 'Programming Q&A site', false)" onmouseout="hideInfo()" onclick="openWebsite('https://stackoverflow.com/')">STACK OVERFLOW</button>
+      <button class="btn btn18" onmouseover="showInfo('LinkedIn', 'Professional network', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.linkedin.com/')">LINKEDIN</button>
+      <button class="btn btn19" onmouseover="showInfo('Twitter', 'Social networking', false)" onmouseout="hideInfo()" onclick="openWebsite('https://twitter.com/')">TWITTER</button>
+   <button class="btn btn20" onmouseover="showInfo('Reddit', 'Discussion forums', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.reddit.com/')">REDDIT</button>
+      <button class="btn btn21" onmouseover="showInfo('Pinterest', 'Image sharing', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.pinterest.com/')">PINTEREST</button>
+      <button class="btn btn22" onmouseover="showInfo('Quora', 'Question & Answer', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.quora.com/')">QUORA</button>
+      <button class="btn btn23" onmouseover="showInfo('Netflix', 'Streaming movies', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.netflix.com/')">NETFLIX</button>
+      <button class="btn btn24" onmouseover="showInfo('Amazon', 'Online shopping', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.amazon.com/')">AMAZON</button>
+      <button class="btn btn25" onmouseover="showInfo('Ebay', 'Online auctions', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.ebay.com/')">EBAY</button>
+      <button class="btn btn26" onmouseover="showInfo('Wikipedia', 'Free encyclopedia', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.wikipedia.org/')">WIKIPEDIA</button>
+      <button class="btn btn27" onmouseover="showInfo('Spotify', 'Music streaming', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.spotify.com/')">SPOTIFY</button>
+      <button class="btn btn28" onmouseover="showInfo('Twitch', 'Live streaming', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.twitch.tv/')">TWITCH</button>
+      <button class="btn btn29" onmouseover="showInfo('Dropbox', 'Cloud storage', false)" onmouseout="hideInfo()" onclick="openWebsite('https://www.dropbox.com/')">DROPBOX</button>
+      <button class="btn btn30" onmouseover="showInfo('Discord', 'Chat for gamers', false)" onmouseout="hideInfo()" onclick="openWebsite('https://discord.com/')">DISCORD</button>
+      </div>
+
+    <div class="info-box" id="infoPanel"></div>
   </main>
 
-  <footer>
-    &copy; 2025 Developed by Ravi Kumar Kushwah
-  </footer>
-<script src="script.js"> </script>
+  <footer>&copy; 2025 @ Developed by Ravi Kumar Kushwah</footer>
+
+  <script>
+    function openWebsite(url) {
+      window.open(url, '_blank');
+    }
+
+    /**
+     * Show info panel.
+     * @param {string} title - Title of the info
+     * @param {string} description - Description or short info
+     * @param {boolean} isTable - Show table if true, else short text
+     * @param {string[]} overviewList - (Optional) Overview items for table
+     * @param {string[]} detailList - (Optional) Details items for table
+     */
+    function showInfo(title, description, isTable, overviewList = [], detailList = []) {
+      const panel = document.getElementById('infoPanel');
+      if (isTable) {
+        panel.innerHTML = `
+          <div class="info-title">${title}</div>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>Overview</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul>
+                    <li>${description}</li>
+                    ${overviewList.map(item => `<li>${item}</li>`).join('')}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    ${detailList.map(item => `<li>${item}</li>`).join('')}
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        `;
+      } else {
+        panel.innerHTML = `
+          <div class="info-title">${title}</div>
+          <div class="info-message">${description}</div>
+        `;
+      }
+      panel.style.display = 'flex';
+    }
+
+    function hideInfo() {
+      document.getElementById('infoPanel').style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
-
 
