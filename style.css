@@ -1,0 +1,153 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('test123.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+     
+    }
+    header {
+   font-size: 2.8rem;
+  
+    }
+
+    footer {
+            font-size: 1rem;
+    }
+
+    /* Live Clock Styling */
+    #clock {
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      text-align: right;
+      font-size: 1rem;
+      font-weight: bold;
+     /* background-color: rgba(0, 0, 0, 0.6); */
+      padding: 10px 15px;
+      border-radius: 10px;
+      /* color: #00ffcc; */
+      color: yellow;
+      line-height: 1.4;
+      
+      font-family: 'Courier New', monospace;
+      box-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
+    }
+
+
+    main {
+      flex-grow: 1;
+      padding: 0 10px 0 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+   h1 {
+  font-size: 2.3rem;
+  color: yellow;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+  
+   }
+    .buttons-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* center every row */
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+      
+     
+    }
+
+    .btn {
+      flex: 0 1 200px; /* allows wrapping and equal sizing */
+      height: 50px;
+      font-size: 16px;
+      padding: 0 10px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+     
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      white-space: normal;
+      line-height: 1.2;
+      font-weight: bold;
+      
+
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+      transform: scale(1.08);
+      border: 7px solid orange;
+      /*  animation: colorAnimate 0 ease-in 1s infinite normal; */
+    }
+
+  /*  @keyframes colorAnimate {
+	0% { 	left:0px;
+		background-color: yellow;
+	}
+
+	50% {
+		background-color: blue;
+	}
+	100% { left: 0px;
+		background-color: red;
+		color: white;}
+	} */
+
+    /* Button colors */
+   .btn1 {
+	  background-color: crimson; }
+    .btn2 { background-color: black; }
+    .btn3 { background-color: forestgreen; }
+    .btn4 { background-color: orange; }
+    .btn5 { background-color: purple; }
+    .btn6 { background-color: teal; }
+    .btn7 { background-color: gold; }
+    .btn8 { background-color: darkred; }
+    .btn9 { background-color: dodgerblue; }
+    .btn10 { background-color: seagreen; }
+    .btn11 { background-color: slateblue; }
+    .btn12 { background-color: darkorange; }
+    .btn13 { background-color: darkcyan; }
+    .btn14 { background-color: firebrick; }
+    .btn15 { background-color: navy; }
+    .btn16 { background-color: darkmagenta; }
+    .btn17 { background-color: mediumvioletred; }
+    .btn18 { background-color: darkslategray; }
+    .btn19 { background-color: tomato; }
+    .btn20 { background-color: royalblue; }
+
+  img { height: 50px;
+	  background-color: brown;
+  }
+

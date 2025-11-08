@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+   /*   background: linear-gradient(to right, royalblue, rebeccapurple); */
+      background-image: url('test123.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      min-height: 100vh; 
+      flex-direction: column; 
+      text-align: center;
+      padding-top: 100px;
+    }
+     h1 {
+      font-size: 2.3rem;
+      color: yellow;
+      text-transform: uppercase;
+      margin-top: 2px;
+      margin-bottom: 70px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      font-weight: bold;
+      text-decoration: underline;
+      text-align: center;
+    }
+
+
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>URL DASHBOARD LOGIN</h1>
+  <input type="text" id="username" placeholder="Username"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+    
+  <!-- Page selection dropdown -->
+  <select id="targetPage">
+    <option value="URLWebsite.html">DASHBOARD-1</option>
+    <option value="URL.html">DASHBOARD-2</option>
+    <option value="URLWebsite2.html">DASHBOARD-3</option>
+  </select><br>
+
+  <button onclick="login()">Login</button>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const target = document.getElementById("targetPage").value;
+
+   // Mapping passwords to specific pages
+      const pagePasswords = {
+        "URLWebsite.html": "ravi1",
+        "URL.html": "ravi2",
+        "URLWebsite2.html": "ravi3"
+      };
+      // For demo: use simple check
+      if (user === "admin" && pass === pagePasswords[target]) {
+        sessionStorage.setItem("loggedIn", "true");
+      //  window.location.href = "URLWebsite.html";
+	 window.location.href = target;
+      } else {
+        alert("Invalid credentials");
+      }
+    }
+  </script>
+</body>
+</html>
+
